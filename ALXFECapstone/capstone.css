@@ -1,0 +1,173 @@
+*{
+    flex-wrap: wrap;
+    color: #0E0986;
+    text-decoration: none;
+}
+body{
+    background-color: #DAEEFA;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#login-to-signup, #signup-to-login{
+    color:#098677;
+}
+
+
+
+.all-container{
+    display: flex;
+    margin-left: 0;
+}
+.otherthan-header{
+    box-sizing: border-box;
+    margin-left: 35px;
+}
+/*Stripes Started*/
+.bottom-stripe,.left-stripe,.top-stripe{
+    background-color:#098677;
+}
+.left-stripe{
+    left: 0;
+    width: 35px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+.top-stripe,.bottom-stripe{
+    width: 100vw;
+    height: 35px;
+}
+
+/*Stripes Ended*/
+/*--Header Started*/
+.head-header{
+     text-align: center;
+     margin: 0;
+     font-size: 20px;
+}
+.header-container{
+    position: relative;
+}
+/*--Header Ended*/
+.otherthan-header{
+    margin-top: 10px;
+}
+
+/*--Login Page started*/
+.login-page-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto 10px;
+    width: 50%;
+
+    text-align: center;
+    padding: 20px;
+    color:#0E0986 ;
+}
+.form-row{
+margin-bottom: 0.5em;
+}
+label{
+    margin: 5px 0px 0px;
+    display: block;
+}
+button{
+    background-color: #0E0986;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    width: max-content;
+    margin: inherit;
+}
+input{
+    border: 1px solid #098677 ;
+    border-radius: 5px;
+    background-color: inherit;
+    margin: 0px 0px 10px 0px;
+    width: max-content;
+    display: inline;
+    padding: 3px;
+}
+
+/*--Login Page Ended*/
+
+/*Signup Page Started*/
+.signup-page-container{
+    margin: auto;
+    width: 50%;
+}
+/*Signup Page Ended*/
+/*Main Page Started*/
+.main-page-header{
+    display: flex;
+    align-items: center;
+}
+.nav-container ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+}
+.nav-page-content{
+    display: flex;
+    flex-direction: column;
+}
+.profile-icon{
+    width: 35px;
+    height: 10%;
+    margin-right: 50px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.main-page-content-headers{
+    margin: auto;
+    width: 50%;
+}
+/* Add your contacts*/
+.add-contact-nav-content{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.add-contact-nav-content form{
+    display: flex;
+    flex-direction: column;
+}
+.add-contact-nav-content button{
+margin-left: 5em;
+}
+/* Contact List*/
+.contact-list-nav{
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    margin: auto;
+    width: 50%;
+}
+
+
+/*Main Page Ended*/
+
+/*Bottom Started*/
+.bottom-container{
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 35px;
+}
+.bottom-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 35px;
+    position: relative;
+}
+/*Bottom Ended*/
+
+
+/* From JavaScript Classes*/

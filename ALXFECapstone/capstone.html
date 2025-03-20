@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management App</title>
+    <link rel="stylesheet" href="capstone.css">
+</head>
+<body>
+<div id="all-container" class="all-container">
+    <div class="left-stripe" id="left-stripe"></div>
+<div class="right-contents" id="right-contents">
+<!--Header Started-->
+<div class="header-container" id="header-container">
+        <h1 id="head-header" class="head-header">To Be changed Title</h1>
+        <div class="top-stripe" id="top-stripe"></div>
+    </div>
+<!--Header Ended-->
+<div class="otherthan-header" id="otherthan-header">
+<!--Login Page started-->
+    <div id="login-page-container" class="login-page-container">
+    <h2 id="login-header" class="login-header">Login</h2>
+    </header>
+    <form action="" id="login-form" class="login-form">
+        <div class="form-row">
+        <label for="email" id="login-email-label"> Email or Mobile Number</label>
+        <input type="text" required id="login-email-input">
+        </div>
+        <div class="form-row">
+        <label id="login-password-label"   for="login-password-input">Password</label>
+        <input type="password" required id="login-password-input">
+        </div>
+        <button class="login-button" id="login-button">Login</button>
+    </form>
+    <p>If you haven't signed up, signup here <a href="#" id="login-to-signup">Signup</a></p>
+    </div>
+<!--Login Page Ended-->
+<!--Signup Page Started-->
+    <div class="signup-page-container" id="signup-page-container">
+    <h2 id="signup-title">Sign Up</h2>
+    </header>
+
+    <form action="submit" id="signup-form">
+        <label for="your-name">Your Name</label> <input type="text" id="your-name">
+        <label for="email-signup">Email</label> <input type="email" id="email-signup">
+        <label for="mobile-signup">Mobile Number</label> <input type="number" name="" id="mobile-signup">
+        <label for="password-signup">Password</label> <input type="password" id="password-signup">
+        <label for="confirm-password">Confirm Password</label> <input type="password" name="password" id="confirm-password">
+        <button class="signup-button" id="signup-button">Sign Up</button>
+    </form>
+    <p>If you have signed up, login here <a href="#" id="signup-to-login">Login</a></p>
+    </div>
+<!--Signup Page Ended-->
+<!--Main Page Started-->
+    <div class="main-page-header" id="main-page-header">
+        <nav class="nav-container" id="nav-container">
+            <ul class="nav-list" id="nav-list">
+                <div id="profile-icon">
+                    <img class="profile-icon" src="/Profile Photo1.jpg" alt="Profile Icon">
+                </div>
+                <li class="add-contact-nav" id="add-contact-nav">Add Contacts</li>
+                <li class="contact-list-nav" id="contact-list-nav">Contacts List</li>
+                <li class="schedule-nav" id="schedule">Schedules</li>
+                <li class="dashboard-nav" id="dashboard-nav">Dashboard</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-page-content" id="nav-page-content">
+
+
+
+        <div class="add-contact-nav-content">
+            <h1 id="main-page-content-headers" class="main-page-content-headers">Add Your Contacts</h1>
+            <form action="">
+                <label for="contact-name-input" id="contact-name-label">Contact Name:</label>
+                <input type="text" name="" id="contact-name-input">
+
+                <label for="contact-mobile-number-input" id="contact-mobile-number-label">Mobile Number:</label>
+                <input type="number" name="" id="contact-mobile-number-input">
+
+                <label for="contact-email-input">Email Address:</label>
+                <input type="email" name="" id="contact-email-input">
+
+                <label for="contact-home-address-input" id="contact-home-address-label">Home Address:</label>
+                <input type="text" name="" id="contact-home-address-input">
+
+                <label for="contact-work-address-input" id="contact-work-address-label">Work Place Address:</label>
+                <input type="text" name="" id="contact-work-address-input">
+                
+                <label for="contact-type-input" id="contact-type-label">Contact Type:</label>
+                <input type="text" name="" id="contact-type-input">
+                <button class="buttons" id="buttons">Save</button>
+            </form>
+        </div>
+
+
+
+
+
+        <div class="contact-list-nav-content">
+            <h1 id="main-page-content-headers" class="main-page-content-headers">Contacts List</h1>
+            <div class="contact-list-nav" id="contact-list-nav">
+                <h6>Family</h6>
+                <h6>Neighbours</h6>
+                <h6>Friends</h6>
+                <h6>School Friends</h6>
+                <h6>Work Place Friends</h6>
+                <h6>Businesses</h6>
+                <h6>Others</h6>
+            </div>
+
+
+        </div>
+        <div class="schedule-nav-content">
+            <h1 id="main-page-content-headers" class="main-page-content-headers">Schedules</h1>
+        </div>
+        <div class="dashboard-nav-content">
+            <h1 id="main-page-content-headers" class="main-page-content-headers">Dashboard</h1>
+
+        </div>
+        <div class="profile-icon-content" id="profile">
+            <h1 id="main-page-content-headers" class="main-page-content-headers">My Profile</h1>
+
+        </div>
+    </div>
+
+<!--Main Page Ended-->
+
+</div>
+<!--Bottom Started-->
+<div class="bottom-container" id="bottom-container">
+    <div class="bottom-stripe"></div>
+    <div class="bottom-text" id="bottom-text">
+        <p>Copy right-Dagne Dereje</p>
+        <a href="#">Contact us</a>
+    </div>
+
+    </div>  
+<!--Bottom Ended-->
+</div>
+</div>
+
+ <script src="capstone.js"></script>
+
+</body>
+</html>
