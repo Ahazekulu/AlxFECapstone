@@ -13,7 +13,12 @@
 <!--Header Started-->
 <div class="header-container" id="header-container">
         <h1 id="head-header" class="head-header">To Be changed Title</h1>
-        <div class="top-stripe" id="top-stripe"></div>
+        <div class="top-stripe" id="top-stripe">
+            <div id="quote-container">
+                <p id="random-quote"></p>
+                <p id="quote-author"></p>
+              </div>
+        </div>
     </div>
 <!--Header Ended-->
 <div class="otherthan-header" id="otherthan-header">
@@ -55,21 +60,19 @@
     <div class="main-page-header" id="main-page-header">
         <nav class="nav-container" id="nav-container">
             <ul class="nav-list" id="nav-list">
-                <div id="profile-icon">
+                <div id="profile-icon-nav">
                     <img class="profile-icon" src="/Profile Photo1.jpg" alt="Profile Icon">
                 </div>
+                <li class="home-nav" id="home-nav">Home</li>
                 <li class="add-contact-nav" id="add-contact-nav">Add Contacts</li>
                 <li class="contact-list-nav" id="contact-list-nav">Contacts List</li>
-                <li class="schedule-nav" id="schedule">Schedules</li>
+                <li class="schedule-nav" id="schedule-nav">Schedules</li>
                 <li class="dashboard-nav" id="dashboard-nav">Dashboard</li>
             </ul>
         </nav>
     </div>
     <div class="nav-page-content" id="nav-page-content">
-
-
-
-        <div class="add-contact-nav-content">
+        <div class="add-contact-nav-content" id="add-contact-nav-content">
             <h1 id="main-page-content-headers" class="main-page-content-headers">Add Your Contacts</h1>
             <form action="">
                 <label for="contact-name-input" id="contact-name-label">Contact Name:</label>
@@ -88,18 +91,21 @@
                 <input type="text" name="" id="contact-work-address-input">
                 
                 <label for="contact-type-input" id="contact-type-label">Contact Type:</label>
-                <input type="text" name="" id="contact-type-input">
-                <button class="buttons" id="buttons">Save</button>
+                <select type="text" name="" id="contact-type-input">
+                    <option value="Family">Family</option>
+                    <option value="Neighbours">Neighbours</option>
+                    <option value="Friends">Friends</option>
+                    <option value="School Friends">School Friends</option>
+                    <option value="Work place Friends">Work Place Friends</option>
+                    <option value="Businesses">Businesses</option>
+                    <option value="Others">Others</option>
+                </select>
+                <button class="buttons" id="contact-save-button">Save</button>
             </form>
         </div>
-
-
-
-
-
-        <div class="contact-list-nav-content">
+        <div class="contact-list-nav-content" id="contact-list-nav-content">
             <h1 id="main-page-content-headers" class="main-page-content-headers">Contacts List</h1>
-            <div class="contact-list-nav" id="contact-list-nav">
+            <div class="contact-type-nav" id="contact-type-nav">
                 <h6>Family</h6>
                 <h6>Neighbours</h6>
                 <h6>Friends</h6>
@@ -108,24 +114,54 @@
                 <h6>Businesses</h6>
                 <h6>Others</h6>
             </div>
-
+            <table class="contact-info-container" id="contact-info-container">
+               <caption id="contact-list-title" class="contact-list-title"></caption>
+                <tr>
+                <th>Contact Name</th>
+                <th >Mobile Number</th>
+                <th>Email Address</th>
+                <th>Home Address</th>
+                <th>Work Place Address</th>
+                <th>Contact Type</th>
+               </tr>
+               <tr>
+                <td id="contact-name-container">Dagne Dereje</td>
+                <td id="contact-mobile-number-container">0923321519</td>
+                <td id="contact-email-address-container">dagne959@gmail.com</td>
+                <td id="contact-home-address-container">Mulo</td>
+                <td id="contact-work-address-container">Addis Ababa</td>
+                <td id="contact-type-container">Family</td>
+                <td class="contact-info-buttons" id="contact-info-buttons">  
+                    <button id="contact-edit-button" >Edit</button>
+                    <button id="contact-schedule-button">+ Schedule</button>
+                    <button id="contact-deleting-button">Delete</button>
+                </td>
+            </tr>
+            </table>
 
         </div>
-        <div class="schedule-nav-content">
+        <div class="schedule-nav-content" id="schedule-nav-content">
             <h1 id="main-page-content-headers" class="main-page-content-headers">Schedules</h1>
         </div>
-        <div class="dashboard-nav-content">
+        <div class="dashboard-nav-content" id="dashboard-nav-content">
             <h1 id="main-page-content-headers" class="main-page-content-headers">Dashboard</h1>
-
         </div>
-        <div class="profile-icon-content" id="profile">
+        <div class="profile-icon-content" id="profile-icon-content">
             <h1 id="main-page-content-headers" class="main-page-content-headers">My Profile</h1>
 
+        </div>
+        <div class="after-signlogin-button" id="after-signlogin-button">
+            <h1 class="main-page-content-headers" id="main-page-content-headers">Manage Your Contacts Here</h1>
+            <div class="after-signlogin-button-img-container" id="after-signlogin-button-img-container">
+            <div><h3>Add Who Matters For You</h3><img src="/ALXFECapstone/add contact.png" alt=""></div>
+            <div><h3>See the list of your contacts</h3><img src="/ALXFECapstone/contact list.png" alt=""></div>
+            <div><h3>See your contact schedule</h3><img src="/ALXFECapstone/schedules.jpg" alt=""></div>
+            <div><h3>See your dashboard</h3><img src="/ALXFECapstone/dashboard.png" alt=""></div>
+        </div>
         </div>
     </div>
 
 <!--Main Page Ended-->
-
 </div>
 <!--Bottom Started-->
 <div class="bottom-container" id="bottom-container">
@@ -134,13 +170,10 @@
         <p>Copy right-Dagne Dereje</p>
         <a href="#">Contact us</a>
     </div>
-
     </div>  
 <!--Bottom Ended-->
 </div>
 </div>
-
  <script src="capstone.js"></script>
-
 </body>
 </html>

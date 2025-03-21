@@ -7,12 +7,55 @@ body{
     background-color: #DAEEFA;
     display: flex;
     flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
 }
 
 #login-to-signup, #signup-to-login{
     color:#098677;
 }
 
+/* images after signin or login*/
+.after-signlogin-button{
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
+
+}
+.after-signlogin-button h3{
+    margin: 0;
+}
+.after-signlogin-button-img-container{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 15px;
+    box-shadow: #0E0986;
+    color: #0E0986;
+    display: flex;
+    flex-direction: row;
+
+}
+.after-signlogin-button-img-container div{
+    border: 10px outset #098677;
+    background-color: #098677;
+    margin: 5px;
+    width: 300px;
+}
+.after-signlogin-button img{
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0;
+}
+.after-signlogin-button-img-container div:hover{
+    border: 10px outset #0E0986;
+    color: white;
+    cursor: pointer;
+}
 
 
 .all-container{
@@ -40,6 +83,13 @@ body{
 .top-stripe,.bottom-stripe{
     width: 100vw;
     height: 35px;
+}
+.top-stripe{
+    background-color: #098677;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 /*Stripes Ended*/
@@ -112,7 +162,15 @@ input{
     list-style: none;
     gap: 10px;
     margin: 0;
+    cursor: pointer;
+    justify-content: space-evenly;
 }
+.nav-container li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
 .nav-page-content{
     display: flex;
     flex-direction: column;
@@ -142,13 +200,43 @@ input{
 .add-contact-nav-content button{
 margin-left: 5em;
 }
-/* Contact List*/
-.contact-list-nav{
+
+/* Contact list*/
+.contact-list-nav-content{
     display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+.contact-type-nav{
+    display: flex;
+    flex-direction: row;
     gap: 10px;
-    font-weight: 400;
-    margin: auto;
-    width: 50%;
+    background-color: #0E0986;
+    text-align: center;
+    height: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-type-nav h6{
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+    font-style: italic;
+}
+.contact-type-nav h6:hover{
+    border-radius: 15px;
+    color: #098677;
+    
+}
+.contact-info-container{
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    width: max-content;
+    border: 1px dashed #098677;
 }
 
 
@@ -170,4 +258,54 @@ margin-left: 5em;
 /*Bottom Ended*/
 
 
+/* Quote*/
+#quote-container {
+    color: white; 
+    text-align: center;
+    font-size: 14px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0E0986;
+    padding: 3px;
+    border-radius: 5px;
+    height: inherit;
+    width: 96%;
+    justify-content: space-evenly;
+}
+
+#random-quote {
+    margin: 0;
+    font-style: italic;
+    color: #DAEEFA;
+}
+
+#quote-author {
+   font-size: 12px;
+    color: #DAEEFA;
+    font-weight: 1000;
+}
+#contact-type-input{
+    border: 1px solid #098677 ;
+    border-radius: 5px;
+    background-color: inherit;
+    margin: 0px 0px 10px 0px;
+    width: 180px;
+    display: inline;
+    padding: 3px;
+    text-align: center;
+}
+
+
+td{
+border: 3px solid green;
+}
+
+
+
+tr, th, td{
+    border: 1px dashed #098677;
+    font-size: 0.8em;
+    padding: 1px;
+}
 /* From JavaScript Classes*/
