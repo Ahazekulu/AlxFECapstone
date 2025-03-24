@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function homePage(){
     let navUl = document.getElementById('nav-list');
     let imgAfterLogin = document.getElementById('after-signlogin-button-img-container');
     let contentAfterLogin = document.getElementById('after-signlogin-button');
+    let signUpTitle = document.getElementById('signup-title')
 
 //Variables for navigation contents
     let addContactContent = document.getElementById('add-contact-nav-content');
@@ -65,15 +66,9 @@ const fallbackQuotes = [
     navPageContent.style.display = 'none';
     loginHeader.style.display = 'none';
     placeHolderHeading.textContent = loginHeader.textContent; 
-
-
-
-    const loginButton= document.getElementById('login-button')
-
-
-    const signupButton= document.getElementById('signup-button');
 //To simulate Login and sign up buttons and move to main page
-
+    const loginButton= document.getElementById('login-button')
+    const signupButton= document.getElementById('signup-button');
         function simulator(event){
             event.preventDefault();
           logInPage.style.display = 'none';
@@ -89,14 +84,15 @@ const fallbackQuotes = [
           dashboardContent.style.display = 'none';
           profileIconContent .style.display = 'none';
           profileIconContent.style.display = 'none';
+          signUpPage.style.display= 'none';
        //Main Page Content Setup 
   // Variables for navigations
-  let addContactNav = document.getElementById('add-contact-nav');
-  let contactListNav= document.getElementById('contact-list-nav');
-  let scheduleNav= document.getElementById('schedule-nav');
-  let dashboardNav= document.getElementById('dashboard-nav');
-  let profileIconNav = document.getElementById('profile-icon-nav');
-  let homeNav = document.getElementById('home-nav');
+                let addContactNav = document.getElementById('add-contact-nav');
+                let contactListNav= document.getElementById('contact-list-nav');
+                let scheduleNav= document.getElementById('schedule-nav');
+                let dashboardNav= document.getElementById('dashboard-nav');
+                let profileIconNav = document.getElementById('profile-icon-nav');
+                let homeNav = document.getElementById('home-nav');
    
   // 1. When Add Contacts clicked
   function addContactPage(){
@@ -164,44 +160,61 @@ const fallbackQuotes = [
       contentAfterLogin.style.display = 'flex';
    }
       homeNav.addEventListener('click', homeNavDisplay);
-   
+      //Return from main page to login
+let mainToLogin = document.getElementById('go-to-login');
+mainToLogin.addEventListener('click', function mainPageToLogin(){
+    signUpPage.style.display = 'none';
+    mainPageHeader.style.display = 'none';
+    navPageContent.style.display = 'none';
+    loginHeader.style.display = 'none';
+    placeHolderHeading.textContent = loginHeader.textContent; 
+    logInPage.style.display = 'flex';
+})
+//Return from main page to signup
+let mainToSignup = document.getElementById('go-to-signup');
+mainToSignup.addEventListener('click', function mainPageToSignup(){
+    signUpPage.style.display = 'flex';
+    mainPageHeader.style.display = 'none';
+    navPageContent.style.display = 'none';
+    loginHeader.style.display = 'none';
+    placeHolderHeading.textContent = signUpTitle.textContent; 
+    logInPage.style.display = 'none';
+    signUpTitle.style.display = 'none';
+})
   
           };
 //To simulate Login button and move to main page
-        loginButton.addEventListener('click', simulator);
+                    loginButton.addEventListener('click', simulator);
 //To simulate signup button and move to main page
-    signupButton.addEventListener('click', simulator);
-
+                    signupButton.addEventListener('click', simulator);
 //To simulate signup link from login page and diplay signup form instead of login
-      let loginToSignup = document.getElementById('login-to-signup');
-      loginToSignup.addEventListener('click', function(event){
+                    let loginToSignup = document.getElementById('login-to-signup');
+                    loginToSignup.addEventListener('click', function(event){
          event.preventDefault();
-         let signUpTitle = document.getElementById('signup-title')
          logInPage.style.display = 'none';
          signUpPage.style.cssText = 'display: flex; flex-direction: column; backgroundColor: red ';
          placeHolderHeading.textContent = signUpTitle.textContent;
          signUpTitle.style.display = 'none';
-      });
+                     });
 //To simulate login link from login page and diplay signup form instead of signup
-      let signupToLogin = document.getElementById('signup-to-login');
-      signupToLogin.addEventListener('click', function(event){
+                    let signupToLogin = document.getElementById('signup-to-login');
+                    signupToLogin.addEventListener('click', function(event){
          event.preventDefault();
          signUpPage.style.display = 'none';
          logInPage.style.display = 'block';
          placeHolderHeading.textContent= loginHeader.textContent;
-      });
-
-      //Images after signin or login button
-      imgAfterLogin.addEventListener('click', function(event){
+                    });
+//Images after signin or login button
+                imgAfterLogin.addEventListener('click', function(event){        
         event.preventDefault();
             if(event.target.tagName === 'IMG'){
                 alert('Click on the navigations at the top');
+                addContactPage();
+                console.log('addContactPage function called');
             }
-      })
-
-      //Contact List Page
+           
+                })
       function toSaveAddedContact(){
-
         let contactName =document.getElementById('contact-name-input');
         let contactNumber =document.getElementById('contact-mobile-number-input');
         let contactEmail =document.getElementById('contact-email-input');
@@ -213,37 +226,55 @@ const fallbackQuotes = [
         let contactGroup = Array.from(contactGroupList.children);
         let contactSaveButton = document.getElementById('contact-save-button');
         let contactInfoContainer = document.getElementById('contact-info-container');
-        //to save the text input by user
-        let  contactNameContainer = document.getElementById('contact-name-container');
-        let  contactNumberContainer =document.getElementById('contact-mobile-number-container');
-        let  contactEmailContainer=document.getElementById('contact-email-address-container');
-        let  contactHomeContainer=document.getElementById('contact-home-address-container');
-        let  contactWorkPlaceContainer=document.getElementById('contact-work-address-container');
-        let  contactTypeContainer=document.getElementById('contact-type-container');
-        let  contactEditButton = document.getElementById('contact-edit-button')             
-        let contactScheduleButton = document.getElementById('contact-schedule-button')
-        let contactDeletingButton = document.getElementById('contact-deleting-button')
-    //To simulate contact save button
+//to save the text input by user
+//To simulate contact save buttonInput
        function saveButtonWorking(event){
             event.preventDefault()
-              for(let i=0; i<contactTypeValue.length; i++){
-                for(let j=0; j<contactGroup.length; j++){
-                    if(contactTypeValue[i].value.trim().toLowerCase() == contactGroup[j].textContent.trim().toLowerCase()){
-                        contactNameContainer.textContent = `${contactName.value}`;
-                        contactNumberContainer.textContent= `${contactNumber.value}`;
-                        contactEmailContainer.textContent= `${contactEmail.value}`;
-                        contactHomeContainer.textContent= `${contactHome.value}`;
-                        contactWorkPlaceContainer.textContent= `${contactWorkPlace.value}`;
-                        contactTypeContainer.textContent= `${contactType.value}`;
-                      console.log('Contact appended successfully to:', contactGroup[j].textContent);
-                        }
+            contactType;
+              for(let i=0; i<contactGroup.length; i++){
+    
+                    if(contactType.value.trim().toLowerCase() === contactGroup[i].textContent.trim().toLowerCase()){
+                        console.log('successfully the same')
+                        contactInfoContainer;
+                      console.log('Contact appended successfully to:', contactGroup[i].textContent);
+                     break;   
                     }
+                    
                 }
+                let newContactCard = document.createElement('div');
+                newContactCard.innerHTML = `
+               <h3>Contact Name: ${contactName.value.trim()}</h3> 
+               <p>Mobile Number: ${contactNumber.value.trim()}</p>
+               <p>Email Address: ${contactEmail.value.trim()}</p>
+               <p>Home Address: ${contactHome.value.trim()}</p>
+               <p>Work Place Address: ${contactWorkPlace.value.trim()}</p>
+               <p>Contact Type: ${contactType.value.trim()}</p>
+               <button>Edit</button>
+                <button>Schedule</button>
+                <button>Delete</button>
+               `
+               contactInfoContainer.appendChild(newContactCard);
+               contactInfoContainer.style.cssText = `
+               border: 1px dashed rgb(37, 20, 190);
+               flex-wrap: wrap;
+               transition: ease-in 0.5s;
+               max-width: max-content;
+               word-wrap: break-word;
+               height: auto;
+               box-sizing: border-box;
+               display: flex;
+               flex-direction: column;
+               gap: 0;
+               background-color: #098677;
+               color: #DAEEFA`;
+
             alert(`Contact Saved Successfully.(Simulated). You Saved ${contactName.value}. Go to Contact List nav to see the saved`);          
             //To display contact list based on clicked contact group
             for(let i=0; i<contactGroup.length; i++){
                 contactGroup[i].addEventListener('click', function(){
-                    if(contactGroup[i].textContent.trim().toLowerCase() === contactType.value.trim().toLowerCase()){
+                    let similarityCheck = contactGroup[i].textContent.trim().toLowerCase() === contactType.value.trim().toLowerCase();
+                    if(similarityCheck){
+                        contactInfoContainer.appendChild(newContactCard.cloneNode(true));
                     }else{
                         contactInfoContainer.textContent = `No contact is added currently for ${contactGroup[i].textContent} `;    
                     }
@@ -255,14 +286,37 @@ const fallbackQuotes = [
     };
     toSaveAddedContact()
 
- 
-      
+//Contact List search
+ function searchContact(){
+    let searchContact = document.getElementById('search-contact');
+    let searchableContact = document.getElementById('contact-info-container');
+    let originalContent = searchableContact.innerHTML;
+    searchContact.addEventListener('input', function(){
+        const searchTerm = searchContact.value.trim().toLowerCase();
+        const searchableText = searchableContact.textContent.trim().toLowerCase();        
+        if(!searchableText.includes(searchTerm)){
+            searchableContact.textContent = `⚠️"${searchTerm}" do not match any of your contact list.Check your input. Thank you!!`;
+            searchableContact.style.backgroundColor = 'red';
+        }else if(searchTerm === "" || searchableText.includes(searchTerm) ){
+            searchableContact.innerHTML = originalContent;
+            searchableContact.style.backgroundColor = '';
+            searchableContact.style.display = 'flex';
+
+                }
+        
+            
+        
+    })
+ } searchContact();
+    
 
 
-      //Quote function
+
+//Quote function
      displayRandomQuote();
      window.addEventListener('click', function() {
         displayRandomQuote();
     });
+
 
       })
