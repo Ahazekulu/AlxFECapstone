@@ -225,22 +225,19 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
         let contactTypeValue = Array.from(contactType.children);
         let contactGroup = Array.from(contactGroupList.children);
         let contactSaveButton = document.getElementById('contact-save-button');
-        let contactInfoContainer = document.getElementById('contact-info-container');
 //to save the text input by user
 //To simulate contact save buttonInput
        function saveButtonWorking(event){
             event.preventDefault()
             contactType;
               for(let i=0; i<contactGroup.length; i++){
-    
                     if(contactType.value.trim().toLowerCase() === contactGroup[i].textContent.trim().toLowerCase()){
                         console.log('successfully the same')
-                        contactInfoContainer;
                       console.log('Contact appended successfully to:', contactGroup[i].textContent);
                      break;   
                     }
-                    
                 }
+                let contactCardContainer = document.getElementById('contact-card-container');
                 let newContactCard = document.createElement('div');
                 newContactCard.innerHTML = `
                <h3>Contact Name: ${contactName.value.trim()}</h3> 
@@ -253,8 +250,7 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                 <button>Schedule</button>
                 <button>Delete</button>
                `
-               contactInfoContainer.appendChild(newContactCard);
-               contactInfoContainer.style.cssText = `
+               contactCardContainer.style.cssText = `
                border: 1px dashed rgb(37, 20, 190);
                flex-wrap: wrap;
                transition: ease-in 0.5s;
@@ -274,40 +270,39 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                 contactGroup[i].addEventListener('click', function(){
                     let similarityCheck = contactGroup[i].textContent.trim().toLowerCase() === contactType.value.trim().toLowerCase();
                     if(similarityCheck){
-                        contactInfoContainer.appendChild(newContactCard.cloneNode(true));
+                        contactCardContainer.innerHTML = newContactCard.innerHTML;    
                     }else{
-                        contactInfoContainer.textContent = `No contact is added currently for ${contactGroup[i].textContent} `;    
+                        contactCardContainer.textContent = `No contact is added currently for ${contactGroup[i].textContent} `;    
                     }
                 });
             };
+            //Contact List search
+ function searchContact(){
+    let searchContact = document.getElementById('search-contact');
+    let searchableContact = document.getElementById('contact-card-container');
+    let originalContent = searchableContact.innerHTML;
+    searchContact.addEventListener('input', function(){
+        similarityCheck = contactGroup[i].textContent.trim().toLowerCase() === contactType.value.trim().toLowerCase();
+        const searchTerm = searchContact.value.trim().toLowerCase();
+        const searchableText = searchableContact.textContent.trim().toLowerCase();        
+        if (searchTerm === "" || searchableText.includes(searchTerm)){
+            console.log('2nd else of search is working')
+            searchableContact.style.display = 'flex';
+            searchableContact.style.style.backgroundColor = '';
+        }else if(!searchableText.includes(searchTerm) && !similarityCheck){
+            searchableContact.textContent = `⚠️"${searchTerm}" do not match any of your contact list.Check your input. Thank you!!`;
+            searchableContact.appendChild(noSearchResult);
+            noSearchResult.style.cssText = `backgroundColor:red; display: flex`;
+        }
+    })
+ } searchContact();
 
         };
         contactSaveButton.addEventListener('click', saveButtonWorking);
     };
     toSaveAddedContact()
 
-//Contact List search
- function searchContact(){
-    let searchContact = document.getElementById('search-contact');
-    let searchableContact = document.getElementById('contact-info-container');
-    let originalContent = searchableContact.innerHTML;
-    searchContact.addEventListener('input', function(){
-        const searchTerm = searchContact.value.trim().toLowerCase();
-        const searchableText = searchableContact.textContent.trim().toLowerCase();        
-        if(!searchableText.includes(searchTerm)){
-            searchableContact.textContent = `⚠️"${searchTerm}" do not match any of your contact list.Check your input. Thank you!!`;
-            searchableContact.style.backgroundColor = 'red';
-        }else if(searchTerm === "" || searchableText.includes(searchTerm) ){
-            searchableContact.innerHTML = originalContent;
-            searchableContact.style.backgroundColor = '';
-            searchableContact.style.display = 'flex';
-
-                }
-        
-            
-        
-    })
- } searchContact();
+    
     
 
 
