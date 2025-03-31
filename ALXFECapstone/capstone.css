@@ -1,14 +1,13 @@
 *{
     flex-wrap: wrap;
-    color: #0E0986;
     text-decoration: none;
+    color: wheat;
 }
 body{
-    background-color: #DAEEFA;
+    background-color: #075988;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    border-left: 35px solid #098677;
     height: 100vh;
     overflow: auto;
 
@@ -42,8 +41,6 @@ body{
 
 }
 .after-signlogin-button-img-container div{
-    border: 10px outset #098677;
-    background-color: #098677;
     margin: 5px;
     width: 300px;
 }
@@ -54,8 +51,8 @@ body{
     padding: 10px;
     margin: 0;
 }
-.after-signlogin-button-img-container div:hover{
-    border: 10px outset #0E0986;
+.after-signlogin-button img:hover{
+    border: 0.1px outset #0E0986;
     color: white;
     cursor: pointer;
 }
@@ -73,7 +70,7 @@ body{
     margin-left: 35px;
 }
 /*Stripes Started*/
-.bottom-stripe,.left-stripe,.top-stripe{
+bottom-stripe,left-stripe,top-stripe{
     background-color:#098677;
 }
 .left-stripe{
@@ -110,7 +107,7 @@ body{
      width: 100%;
 }
 .header-container{
-    position: relative;
+    position: sticky;
 }
 /*--Header Ended*/
 .otherthan-header{
@@ -183,6 +180,7 @@ input{
 .nav-list{
     width: 100%;
     justify-content: space-between;
+
 }
 .right-contents{
     width: 100vw;
@@ -280,17 +278,17 @@ margin-left: 5em;
 
 /*Bottom Started*/
 .bottom-container{
-    margin-bottom: 0px;
-    padding: 10px;
-    margin-top: 35px;
-    width: 100%;
-}
-.bottom-text{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-left: 35px;
-    position: relative;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0px;
+    color: white;
+    background-color: #0E0986;
+}
+.bottom-container a{
+    color: white;
+
 }
 /*Bottom Ended*/
 
@@ -302,7 +300,7 @@ margin-left: 5em;
     font-size: 20px; 
     display: block;
     align-items: flex-start;
-    background-color: #0E0986;
+    background-color: #098677;
     padding: 3px;
     border-radius: 5px;
     height: 35px;
@@ -341,32 +339,19 @@ margin-left: 5em;
     padding: 3px;
     text-align: center;
 }
-tr, td{
-    border: 1px ridge #0E0986;
-    font-size: 0.8em;
-    padding-left: 10px;
-    background-color: #098677;
-    flex-flow: row;
-    width: auto;
-    border-radius: 15px;
-    word-wrap: break-word;
-    box-sizing: border-box;
-}
-th{
-    background-color: #0E0986;
-    color: #DAEEFA;
-    border: 10px solid #098677;
-    border-radius: 15px;
-    width: auto;
-    word-wrap: break-word;
-    box-sizing: border-box;
-}
 /* From JavaScript Classes*/
-#contact-edit-button{
-    
-background-color: rgb(158, 19, 19);
+@media (max-width:760px) {
+
 }
 
-.button-container{
-    background-color: black;
-}
+
+
+
+
+
+
+
+
+
+
+

@@ -96,7 +96,7 @@ const fallbackQuotes = [
    
   // 1. When Add Contacts clicked
   function addContactPage(){
-  addContactNav.style.color = '#098677';
+  addContactNav.style.color = 'white';
   contactListContent.style.display = 'none';
   scheduleContent.style.display = 'none';
   dashboardContent.style.display = 'none';
@@ -107,7 +107,7 @@ const fallbackQuotes = [
   addContactNav.addEventListener('click', addContactPage); 
   // 2. When Contacts List clicked
   function contactListPage(){
-         contactListNav.style.color = '#098677';
+         contactListNav.style.color = 'white';
          scheduleContent.style.display = 'none';
          dashboardContent.style.display = 'none';
          profileIconContent.style.display = 'none';
@@ -118,7 +118,7 @@ const fallbackQuotes = [
          contactListNav.addEventListener('click', contactListPage);
   // 3. When Schedules clicked
   function schedulePage(){
-     scheduleNav.style.color = '#098677';
+     scheduleNav.style.color = 'white';
      scheduleContent.style.display = 'flex'
      contactListContent.style.display = 'none';
      dashboardContent.style.display = 'none';
@@ -129,7 +129,7 @@ const fallbackQuotes = [
      scheduleNav.addEventListener('click', schedulePage);     
   // 4. When Dashboard clicked
   function dashboardPage(){
-     dashboardNav.style.color = '#098677';
+     dashboardNav.style.color = 'white';
      contactListContent.style.display = 'none';
      profileIconContent.style.display = 'none';
      scheduleContent.style.display = 'none';
@@ -140,7 +140,7 @@ const fallbackQuotes = [
      dashboardNav.addEventListener('click',dashboardPage);
   // 5. When Profile icon clicked
   function profilePage(){
-     profileIconNav.style.color = '#098677';
+     profileIconNav.style.color = 'white';
      contactListContent.style.display = 'none';
      scheduleContent.style.display = 'none';
      addContactContent.style.display = 'none';
@@ -151,7 +151,7 @@ const fallbackQuotes = [
      profileIconNav.addEventListener('click', profilePage);
       // 6. When home clicked
   function homeNavDisplay(){
-      homeNav.style.color = '#098677';
+      homeNav.style.color = 'white';
       contactListContent.style.display = 'none';
       scheduleContent.style.display = 'none';
       addContactContent.style.display = 'none';
@@ -246,7 +246,7 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                <p>Home Address: ${contactHome.value.trim()}</p>
                <p>Work Place Address: ${contactWorkPlace.value.trim()}</p>
                <p>Contact Type: ${contactType.value.trim()}</p>
-               <div id="button-container>
+               <div>
                <button id="contact-edit-button">Edit</button>
                 <button id="contact-schedule-button">Schedule</button>
                 <button id="contact-delete-button">Delete</button>
@@ -262,7 +262,6 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                display: flex;
                flex-direction: column;
                gap: 0;
-               background-color: #098677;
                color: #DAEEFA`;
             alert(`Contact Saved Successfully.(Simulated). You Saved ${contactName.value}. Go to Contact List nav to see the saved`);          
             //To display contact list based on clicked contact group
