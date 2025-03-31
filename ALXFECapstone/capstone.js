@@ -246,24 +246,24 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                <p>Home Address: ${contactHome.value.trim()}</p>
                <p>Work Place Address: ${contactWorkPlace.value.trim()}</p>
                <p>Contact Type: ${contactType.value.trim()}</p>
-               <button>Edit</button>
-                <button>Schedule</button>
-                <button>Delete</button>
-               `
+               <div id="button-container>
+               <button id="contact-edit-button">Edit</button>
+                <button id="contact-schedule-button">Schedule</button>
+                <button id="contact-delete-button">Delete</button>
+                </div>
+               `;
+               contactCardContainer.appendChild(newContactCard);
                contactCardContainer.style.cssText = `
-               border: 1px dashed rgb(37, 20, 190);
+               border: 30px groove  #098677;;
                flex-wrap: wrap;
                transition: ease-in 0.5s;
                max-width: max-content;
-               word-wrap: break-word;
-               height: auto;
                box-sizing: border-box;
                display: flex;
                flex-direction: column;
                gap: 0;
                background-color: #098677;
                color: #DAEEFA`;
-
             alert(`Contact Saved Successfully.(Simulated). You Saved ${contactName.value}. Go to Contact List nav to see the saved`);          
             //To display contact list based on clicked contact group
             for(let i=0; i<contactGroup.length; i++){
@@ -276,42 +276,63 @@ mainToSignup.addEventListener('click', function mainPageToSignup(){
                     }
                 });
             };
-            //Contact List search
- function searchContact(){
-    let searchContact = document.getElementById('search-contact');
-    let searchableContact = document.getElementById('contact-card-container');
-    let originalContent = searchableContact.innerHTML;
-    searchContact.addEventListener('input', function(){
-        similarityCheck = contactGroup[i].textContent.trim().toLowerCase() === contactType.value.trim().toLowerCase();
-        const searchTerm = searchContact.value.trim().toLowerCase();
-        const searchableText = searchableContact.textContent.trim().toLowerCase();        
-        if (searchTerm === "" || searchableText.includes(searchTerm)){
-            console.log('2nd else of search is working')
-            searchableContact.style.display = 'flex';
-            searchableContact.style.style.backgroundColor = '';
-        }else if(!searchableText.includes(searchTerm) && !similarityCheck){
-            searchableContact.textContent = `⚠️"${searchTerm}" do not match any of your contact list.Check your input. Thank you!!`;
-            searchableContact.appendChild(noSearchResult);
-            noSearchResult.style.cssText = `backgroundColor:red; display: flex`;
+            let searchContact = document.getElementById('search-contact');
+            searchContact.addEventListener('input', function(){
+        let searchInput = searchContact.value.trim().toLowerCase();
+        let searchableContact = contactCardContainer.textContent.trim().toLowerCase();
+        let searchFound = searchableContact.includes(searchInput);
+        if(searchFound){
+            contactCardContainer.innerHTML = newContactCard.innerHTML
+            contactCardContainer.style.display = 'flex'
+        } else{
+            contactCardContainer.textContent = `⚠️"${searchInput}" do not match any of your contact list.Check your input. Thank you!!`;
+            contactCardContainer.style.cssText = `
+            transition: ease-in 0.5s;
+            background-color: red;`
         }
-    })
- } searchContact();
+            searchContact.addEventListener('keydown', function(event){
+            if(event.key === 'Backspace'){
+                console.log('backspace worked');
+            if(searchFound){
+                contactCardContainer.innerHTML = newContactCard.innerHTML
+                contactCardContainer.style.cssText = `border: 30px groove  #098677;;
+               flex-wrap: wrap;
+               transition: ease-in 0.5s;
+               max-width: max-content;
+               box-sizing: border-box;
+               display: flex;
+               flex-direction: column;
+               gap: 0;
+               background-color: #098677;
+               color: #DAEEFA`
+        } else{
+            contactCardContainer.textContent = `⚠️"${searchInput}" do not match any of your contact list.Check your input. Thank you!!`;
+            contactCardContainer.style.cssText = `
+            transition: ease-in 0.5s;
+            background-color: red;`
+        }
+    }
+            })
+        
+        //Contact buttons
+       let buttonContainer = newContactCard.querySelector('#button-container');
+       let  contactEdit = newContactCard.querySelector('#contact-edit-button');
+       let  contactSchedule = newContactCard.querySelector('#contact-schedule-button');
+       let  contactDelete = newContactCard.querySelector('#contact-delete-button');
 
-        };
+
+
+
+
+   
+    })
+         };
         contactSaveButton.addEventListener('click', saveButtonWorking);
     };
     toSaveAddedContact()
-
-    
-    
-
-
-
 //Quote function
      displayRandomQuote();
      window.addEventListener('click', function() {
         displayRandomQuote();
     });
-
-
       })

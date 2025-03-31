@@ -9,7 +9,9 @@ body{
     flex-wrap: wrap;
     width: 100%;
     border-left: 35px solid #098677;
-    height: max-content;
+    height: 100vh;
+    overflow: auto;
+
 }
 
 #login-to-signup, #signup-to-login{
@@ -61,7 +63,9 @@ body{
 
 .all-container{
     display: flex;
-    width: 100%;
+    width: 100vw;
+    height: 100%;
+
 }
 .otherthan-header{
     box-sizing: border-box;
@@ -301,10 +305,10 @@ margin-left: 5em;
     background-color: #0E0986;
     padding: 3px;
     border-radius: 5px;
-    height: auto;
+    height: 35px;
     width: 100%;
     margin-left: 15px;
-    font-weight: bold;
+    font-weight: 200;
     padding: 10px;
     gap: 0;
 
@@ -317,6 +321,8 @@ margin-left: 5em;
     text-align: center;
     gap: 0;
     margin-left: 50px;
+    font-size: medium;
+    overflow-y: auto;
 }
 
 #quote-author {
@@ -335,9 +341,6 @@ margin-left: 5em;
     padding: 3px;
     text-align: center;
 }
-
-
-
 tr, td{
     border: 1px ridge #0E0986;
     font-size: 0.8em;
@@ -360,5 +363,10 @@ th{
 }
 /* From JavaScript Classes*/
 #contact-edit-button{
-    background-color: rgb(158, 19, 19);
+    
+background-color: rgb(158, 19, 19);
+}
+
+.button-container{
+    background-color: black;
 }
