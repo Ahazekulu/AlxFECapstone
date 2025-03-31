@@ -341,6 +341,9 @@ margin-left: 5em;
 }
 /* From JavaScript Classes*/
 @media (max-width:760px) {
+    body{
+        display: flex;
+    }
 
 }
 
